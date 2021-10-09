@@ -22,7 +22,16 @@ public class UserEntity implements java.io.Serializable {
     final String lastName,
     final Date dob,
     final String maritalStatus
-  ) {
+  ) throws Exception {
+    String[] maritalStatuses = new String[] { "SINGLE", "MARRIED", "DIVORCED" };
+    boolean includesStatus = false;
+
+    for (String mStatus : maritalStatuses) if (
+      mStatus.equalsIgnoreCase(maritalStatus)
+    ) includesStatus = true;
+
+    if (!includesStatus) throw new Exception("[invalid_marital_status]");
+
     this.firstName = firstName;
     this.lastName = lastName;
     this.dob = dob;
@@ -53,7 +62,16 @@ public class UserEntity implements java.io.Serializable {
     return this.dob;
   }
 
-  public void setMaritalStatus(final String maritalStatus) {
+  public void setMaritalStatus(final String maritalStatus) throws Exception {
+    String[] maritalStatuses = new String[] { "SINGLE", "MARRIED", "DIVORCED" };
+    boolean includesStatus = false;
+
+    for (String mStatus : maritalStatuses) if (
+      mStatus.equalsIgnoreCase(maritalStatus)
+    ) includesStatus = true;
+
+    if (!includesStatus) throw new Exception("[invalid_marital_status]");
+
     this.maritalStatus = MaritalStatus.valueOf(maritalStatus.toUpperCase());
   }
 
