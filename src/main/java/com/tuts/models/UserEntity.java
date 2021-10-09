@@ -17,18 +17,12 @@ public class UserEntity implements java.io.Serializable {
 
   public UserEntity() {}
 
-  public UserEntity(
-    final String firstName,
-    final String lastName,
-    final Date dob,
-    final String maritalStatus
-  ) throws Exception {
+  public UserEntity(final String firstName, final String lastName, final Date dob, final String maritalStatus)
+    throws Exception {
     String[] maritalStatuses = new String[] { "SINGLE", "MARRIED", "DIVORCED" };
     boolean includesStatus = false;
 
-    for (String mStatus : maritalStatuses) if (
-      mStatus.equalsIgnoreCase(maritalStatus)
-    ) includesStatus = true;
+    for (String mStatus : maritalStatuses) if (mStatus.equalsIgnoreCase(maritalStatus)) includesStatus = true;
 
     if (!includesStatus) throw new Exception("[invalid_marital_status]");
 
@@ -66,9 +60,7 @@ public class UserEntity implements java.io.Serializable {
     String[] maritalStatuses = new String[] { "SINGLE", "MARRIED", "DIVORCED" };
     boolean includesStatus = false;
 
-    for (String mStatus : maritalStatuses) if (
-      mStatus.equalsIgnoreCase(maritalStatus)
-    ) includesStatus = true;
+    for (String mStatus : maritalStatuses) if (mStatus.equalsIgnoreCase(maritalStatus)) includesStatus = true;
 
     if (!includesStatus) throw new Exception("[invalid_marital_status]");
 
