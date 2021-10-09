@@ -1,6 +1,6 @@
 package com.tuts.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class UserEntity implements java.io.Serializable {
 
@@ -12,12 +12,12 @@ public class UserEntity implements java.io.Serializable {
 
   private String firstName;
   private String lastName;
-  private Date dob;
+  private LocalDate dob;
   private MaritalStatus maritalStatus;
 
   public UserEntity() {}
 
-  public UserEntity(final String firstName, final String lastName, final Date dob, final String maritalStatus)
+  public UserEntity(final String firstName, final String lastName, final LocalDate dob, final String maritalStatus)
     throws Exception {
     String[] maritalStatuses = new String[] { "SINGLE", "MARRIED", "DIVORCED" };
     boolean includesStatus = false;
@@ -48,11 +48,11 @@ public class UserEntity implements java.io.Serializable {
     return this.lastName;
   }
 
-  public void setDob(final Date dob) {
+  public void setDob(final LocalDate dob) {
     this.dob = dob;
   }
 
-  public Date getDob() {
+  public LocalDate getDob() {
     return this.dob;
   }
 
