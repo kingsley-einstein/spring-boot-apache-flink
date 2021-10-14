@@ -1,6 +1,7 @@
 package com.tuts.models;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class UserEntity implements java.io.Serializable {
 
@@ -14,6 +15,7 @@ public class UserEntity implements java.io.Serializable {
   private String lastName;
   private LocalDate dob;
   private MaritalStatus maritalStatus;
+  private UUID id;
 
   public UserEntity() {}
 
@@ -30,6 +32,7 @@ public class UserEntity implements java.io.Serializable {
     this.lastName = lastName;
     this.dob = dob;
     this.maritalStatus = MaritalStatus.valueOf(maritalStatus.toUpperCase());
+    this.id = UUID.randomUUID();
   }
 
   public void setFirstName(final String firstName) {
@@ -69,5 +72,9 @@ public class UserEntity implements java.io.Serializable {
 
   public MaritalStatus getMaritalStatus() {
     return this.maritalStatus;
+  }
+
+  public UUID getId() {
+    return this.id;
   }
 }
