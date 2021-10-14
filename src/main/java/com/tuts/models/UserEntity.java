@@ -15,7 +15,7 @@ public class UserEntity implements java.io.Serializable {
   private String lastName;
   private LocalDate dob;
   private MaritalStatus maritalStatus;
-  private UUID id;
+  public UUID id;
 
   public UserEntity() {}
 
@@ -72,9 +72,5 @@ public class UserEntity implements java.io.Serializable {
 
   public MaritalStatus getMaritalStatus() {
     return this.maritalStatus;
-  }
-
-  public UUID getId() {
-    return this.id;
   }
 }

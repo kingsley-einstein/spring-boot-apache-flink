@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class AddressEntity implements java.io.Serializable {
 
-  private UUID userId;
+  public UUID userId;
   private Integer houseNumber;
   private String streetName;
   private String cityName;
@@ -67,9 +67,5 @@ public class AddressEntity implements java.io.Serializable {
 
   public String getCountryName() {
     return this.countryName;
-  }
-
-  public UUID getUserId() {
-    return this.userId;
   }
 }

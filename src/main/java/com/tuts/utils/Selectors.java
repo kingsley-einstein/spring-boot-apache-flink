@@ -11,7 +11,7 @@ public class Selectors {
 
     @Override
     public UUID getKey(UserEntity value) {
-      return value.getId();
+      return value.id;
     }
   }
 
@@ -19,7 +19,7 @@ public class Selectors {
 
     @Override
     public UUID getKey(AddressEntity value) {
-      return value.getUserId();
+      return value.userId;
     }
   }
 }
